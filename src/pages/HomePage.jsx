@@ -31,7 +31,7 @@ const HomePage = () => {
           <Heading as="h1">{user.email}</Heading>
           <Button
             onClick={() => {
-              dispatch(authSlice.actions.clearUser());
+              dispatch(authSlice.actions.logOut());
             }}
           >
             Logout
@@ -43,7 +43,7 @@ const HomePage = () => {
 
   return (
     <Flex height="100vh" hAlignContent="center" vAlignContent="center">
-      {user && <AuthenticatedContent dispatch={dispatch} />}
+      {user && <AuthenticatedContent />}
       {!user && <UnAuthenticatedContent />}
     </Flex>
   );
